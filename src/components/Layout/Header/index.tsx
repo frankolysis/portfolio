@@ -78,14 +78,14 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed h-24 top-0 py-1 z-50 w-full dark:bg-transparent transition-all ${
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         sticky
-          ? 'shadow-lg bg-white dark:shadow-dark-md dark:bg-darklight!'
-          : 'shadow-none'
+          ? 'py-3 backdrop-blur-xl bg-ivory/80 dark:bg-darkmode/80 border-b border-border/60 dark:border-dark_border/60'
+          : 'py-5 bg-transparent border-b border-transparent'
       }`}>
-      <div className='container mx-auto max-w-6xl flex items-center justify-between p-6'>
+      <div className='container mx-auto max-w-6xl flex items-center justify-between px-6'>
         <Logo />
-        <nav className='hidden lg:flex grow items-center justify-center gap-6'>
+        <nav className='hidden lg:flex grow items-center justify-center gap-8'>
           {headerData.map((item, index) => (
             <HeaderLink key={index} item={item} />
           ))}
@@ -115,7 +115,7 @@ const Header: React.FC = () => {
           </button>
           <Link
             href='#'
-            className='hidden lg:block bg-transparent border border-primary text-primary px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white'
+            className='hidden lg:block text-sm font-medium text-slate_ink dark:text-white/80 hover:text-coral dark:hover:text-coral px-3 py-2 transition-colors'
             onClick={() => {
               setIsSignInOpen(true)
             }}>
@@ -143,11 +143,11 @@ const Header: React.FC = () => {
           )}
           <Link
             href='#'
-            className='hidden lg:block bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700'
+            className='hidden lg:block bg-slate_ink text-ivory dark:bg-ivory dark:text-slate_ink text-sm font-medium px-5 py-2.5 rounded-full hover:bg-coral hover:text-white dark:hover:bg-coral dark:hover:text-white transition-all'
             onClick={() => {
               setIsSignUpOpen(true)
             }}>
-            Sign Up
+            Get started
           </Link>
           {isSignUpOpen && (
             <div
@@ -219,7 +219,7 @@ const Header: React.FC = () => {
           <div className='mt-4 flex flex-col gap-4 w-full'>
             <Link
               href='#'
-              className='bg-transparent border border-primary text-primary px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white'
+              className='border border-slate_ink/20 dark:border-white/20 text-slate_ink dark:text-white px-4 py-2.5 rounded-full text-center hover:border-coral hover:text-coral'
               onClick={() => {
                 setIsSignInOpen(true)
                 setNavbarOpen(false)
@@ -228,12 +228,12 @@ const Header: React.FC = () => {
             </Link>
             <Link
               href='#'
-              className='bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700'
+              className='bg-slate_ink text-ivory dark:bg-ivory dark:text-slate_ink px-4 py-2.5 rounded-full text-center hover:bg-coral hover:text-white'
               onClick={() => {
                 setIsSignUpOpen(true)
                 setNavbarOpen(false)
               }}>
-              Sign Up
+              Get started
             </Link>
           </div>
         </nav>
