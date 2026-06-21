@@ -1,48 +1,34 @@
-import React, { FC } from "react";
-import Image from "next/image";
-import { Blog } from "@/types/blog";
-import { format } from "date-fns";
-import Link from "next/link";
+import React from 'react'
+import Image from 'next/image'
+import { Blog } from '@/types/blog'
+import { format } from 'date-fns'
+import Link from 'next/link'
 
 const BlogCard = ({ blog }: { blog: Blog }) => {
-    const { title, coverImage, excerpt, date, slug } = blog;
-    return (
-        <>
-            <div className="group mb-0 relative">
-                <div className="mb-8 overflow-hidden rounded-sm">
-                    <Link href={`/blog/#!`} aria-label="blog cover" className="block">
-                        <Image
-                            src={`/venus-nextjs/${coverImage!}`}
-                            alt="imageeee"
-                            className="w-full transition group-hover:scale-125"
-                            width={408}
-                            height={272}
-                            style={{ width: '100%', height: 'auto' }}
-                            quality={100}
-                        />
-                    </Link>
-                </div>
-                <div className="absolute top-0 bg-primary py-2 ml-4 mt-4 px-5 rounded-sm">
-                    <span className="text-white font-medium text-sm">
-                        Pricing
-                    </span>
-                </div>
-                <div>
-                    <h3>
-                        <Link
-                            href={`/blog/${slug}`}
-                            className="mb-4 inline-block font-semibold text-dark text-black hover:text-primary dark:text-white dark:hover:text-primary text-[22px] leading-tight"
-                        >
-                            {title}
-                        </Link>
-                    </h3>
-                    <span className="text-sm font-semibold leading-loose text-SereneGray">
-                        {format(new Date(date), "dd MMM yyyy")}
-                    </span>
-                </div>
-            </div>
-        </>
-    );
-};
+  const { title, coverImage, date, slug } = blog
+  return (
+    <Link href={`/blog/${slug}`} className='group block'>
+      <div className='overflow-hidden rounded-2xl aspect-[4/3] bg-cream dark:bg-darklight border border-border dark:border-dark_border mb-6'>
+        <Image
+          src={`/venus-nextjs/${coverImage!}`}
+          alt={title || ''}
+          width={600}
+          height={450}
+          quality={100}
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          className='transition-transform duration-700 group-hover:scale-105'
+        />
+      </div>
+      <div className='space-y-3'>
+        <span className='text-xs uppercase tracking-widest text-coral font-medium'>
+          {date ? format(new Date(date), 'dd MMM yyyy') : ''}
+        </span>
+        <h3 className='font-display text-2xl text-slate_ink dark:text-white leading-tight tracking-tight group-hover:text-coral transition-colors'>
+          {title}
+        </h3>
+      </div>
+    </Link>
+  )
+}
 
-export default BlogCard;
+export default BlogCard

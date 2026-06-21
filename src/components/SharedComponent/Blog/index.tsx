@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import { Icon } from '@iconify/react'
 import BlogCard from './blogCard'
 import { getAllPosts } from '@/utils/markdown'
 
@@ -14,40 +13,27 @@ const Blog: React.FC = () => {
   ]).slice(0, 3)
 
   return (
-    <section
-      className='flex flex-wrap justify-center dark:bg-darkmode'
-      id='blog'>
-      <div className='container mx-auto max-w-6xl'>
-        <div className='flex items-baseline justify-between flex-wrap'>
-          <h2
-            className='sm:mb-11 mb-3 text-4xl font-bold text-midnight_text dark:text-white'
-            data-aos='fade-right'
-            data-aos-delay='200'
-            data-aos-duration='1000'>
-            Latest blog & news
-          </h2>
-          <Link
-            href='#'
-            className='flex items-center gap-3 text-base text-midnight_text dark:text-white dark:hover:text-primary font-medium hover:text-primary sm:pb-0 pb-3'
-            data-aos='fade-left'
-            data-aos-delay='200'
-            data-aos-duration='1000'>
-            View More
-            <span>
-              <Icon icon='solar:arrow-right-outline' width='30' height='30' />
+    <section className='bg-ivory dark:bg-darkmode py-24 md:py-32' id='blog'>
+      <div className='container mx-auto max-w-6xl px-6'>
+        <div className='flex items-end justify-between flex-wrap gap-6 mb-16'>
+          <div>
+            <span className='text-xs uppercase tracking-widest text-coral font-medium'>
+              Writing
             </span>
+            <h2 className='font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-slate_ink dark:text-white mt-4'>
+              Notes & essays
+            </h2>
+          </div>
+          <Link
+            href='/blog'
+            className='inline-flex items-center gap-2 text-sm font-medium text-slate_ink dark:text-white hover:text-coral dark:hover:text-coral transition-colors'>
+            All writing
+            <span>→</span>
           </Link>
         </div>
-        <div className='grid grid-cols-12 gap-7'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10'>
           {posts.map((blog, i) => (
-            <div
-              key={i}
-              className='w-full md:col-span-4 sm:col-span-6 col-span-12'
-              data-aos='fade-up'
-              data-aos-delay={`${i * 200}`}
-              data-aos-duration='1000'>
-              <BlogCard blog={blog} />
-            </div>
+            <BlogCard key={i} blog={blog} />
           ))}
         </div>
       </div>
