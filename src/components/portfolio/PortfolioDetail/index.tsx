@@ -2,47 +2,55 @@ import React from 'react'
 
 const PortfolioDetail = () => {
   return (
-    <>
-      <section className='md:py-24 py-16 dark:bg-darkmode'>
-        <div className='container mx-auto max-w-6xl'>
-          <div className='flex md:flex-row flex-col items-start w-full justify-between flex-wrap sm:flex-nowrap lg:gap-0 gap-8'>
-            <div className='lg:w-[60%] w-full'>
-              <div className='pb-[3.625rem]'>
-                <p className='md:text-[1.6875rem] text-[1.0625rem] md:leading-[2.25rem] leading-[2rem] font-normal text-midnight_tex dark:text-white'>
-                  We are a dedicated team of passionate product
-                  managers,developers, UX/UI designers, QA engineers experts
-                  helping businesses from new startups
+    <section className='bg-ivory dark:bg-darkmode py-20 md:py-28'>
+      <div className='container mx-auto max-w-6xl px-6'>
+        <div className='grid md:grid-cols-12 gap-12 md:gap-16'>
+          <div className='md:col-span-8 space-y-12'>
+            <p className='font-display text-2xl md:text-3xl leading-snug text-slate_ink dark:text-white'>
+              A dedicated team of product managers, engineers, and designers
+              helping founders ship considered software — from early concept
+              to launch and beyond.
+            </p>
+            <div className='grid sm:grid-cols-2 gap-10'>
+              <div>
+                <h3 className='text-xs uppercase tracking-widest text-coral font-medium mb-3'>
+                  The brief
+                </h3>
+                <p className='text-grey dark:text-white/60 leading-relaxed'>
+                  Popularised in the 1960s with the release of Letraset sheets,
+                  more recently with desktop publishing software like Aldus
+                  PageMaker.
                 </p>
               </div>
-              <div className='flex items-start justify-between sm:flex-row flex-col lg:gap-0 gap-4'>
-                <p className='sm:text-lg text-base font-normal text-secondary max-w-[19.4375rem] dark:text-white/50'>
-                  Popularised in the 1960s with the release of Letraset sheets
-                  containing Lorem Ipsum passages, and more recently with
-                  desktop publishing software like Aldus PageMaker.
-                </p>
-                <p className='sm:text-lg text-base font-normal text-secondary max-w-[19.4375rem] dark:text-white/50'>
-                  Lorem Ipsum as their default model text, and a search for
-                  lorem ipsum will uncover many web sites still in their
-                  infancy. Various versions have evolved over.
+              <div>
+                <h3 className='text-xs uppercase tracking-widest text-coral font-medium mb-3'>
+                  The approach
+                </h3>
+                <p className='text-grey dark:text-white/60 leading-relaxed'>
+                  Lorem ipsum as their default model text — search uncovers
+                  many sites still in their infancy as versions evolve.
                 </p>
               </div>
-            </div>
-            <div
-              className='flex flex-col items-start bg-white shadow-[0px_20px_80px_0px_#68758D26] pt-10 lg:pl-14 pl-9 pb-8 lg:pr-40 pr-10 lg:w-[30%] w-full dark:bg-darklight'
-              data-aos='fade-left'
-              data-aos-delay='200'
-              data-aos-duration='1000'>
-              <span className='pb-6 text-2xl text-primary'>Our services</span>
-              <span className='pb-6 text-lg'>Brand Strategy</span>
-              <span className='pb-6 text-lg'>Communications</span>
-              <span className='pb-6 text-lg'>Visual Identity</span>
-              <span className='pb-6 text-lg'>Brand Support</span>
-              <span className='pb-6 text-lg'>Web Design</span>
             </div>
           </div>
+          <aside className='md:col-span-4 bg-cream dark:bg-darklight border border-border dark:border-dark_border rounded-3xl p-8 md:p-10 h-fit md:sticky md:top-28'>
+            <h3 className='font-display text-2xl text-slate_ink dark:text-white tracking-tight mb-6'>
+              Services
+            </h3>
+            <ul className='space-y-4'>
+              {['Brand strategy', 'Communications', 'Visual identity', 'Brand support', 'Web design'].map((s) => (
+                <li
+                  key={s}
+                  className='flex items-center justify-between text-slate_ink dark:text-white/80 pb-4 border-b border-border dark:border-dark_border last:border-0 last:pb-0'>
+                  <span>{s}</span>
+                  <span className='text-coral'>→</span>
+                </li>
+              ))}
+            </ul>
+          </aside>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }
 
