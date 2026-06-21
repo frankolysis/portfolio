@@ -1,64 +1,48 @@
 import React from 'react'
 import Link from 'next/link'
 import { Servicebox } from '@/app/api/data'
-import { Icon } from '@iconify/react'
 import Image from 'next/image'
 
 const Services = () => {
   return (
-    <section className='bg-section dark:bg-darklight' id='services'>
-      <div className='container mx-auto max-w-6xl px-4'>
-        <div
-          className='flex gap-2 items-center justify-center'
-          data-aos='fade-up'
-          data-aos-delay='200'
-          data-aos-duration='1000'>
-          <span className='w-3 h-3 rounded-full bg-success'></span>
-          <span className='font-medium text-midnight_text text-sm dark:text-white/50'>
-            our services
+    <section className='bg-cream dark:bg-darklight py-24 md:py-32' id='services'>
+      <div className='container mx-auto max-w-6xl px-6'>
+        <div className='max-w-3xl mb-16 md:mb-24'>
+          <span className='text-xs uppercase tracking-widest text-coral font-medium'>
+            What I do
           </span>
+          <h2 className='font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-slate_ink dark:text-white mt-4'>
+            Services shaped around
+            <br />
+            <span className='italic text-coral'>your real problem.</span>
+          </h2>
         </div>
-        <h2
-          className='sm:text-4xl text-[28px] leading-tight font-bold text-midnight_text md:text-center text-start pt-7 pb-20 md:w-4/6 w-full m-auto dark:text-white'
-          data-aos='fade-up'
-          data-aos-delay='200'
-          data-aos-duration='1000'>
-          Services specifically designed to meet your business needs
-        </h2>
-        <div className='grid md:grid-cols-12 sm:grid-cols-8 grid-cols-1 gap-7'>
+
+        <div className='grid md:grid-cols-3 grid-cols-1 gap-px bg-border dark:bg-dark_border rounded-3xl overflow-hidden border border-border dark:border-dark_border'>
           {Servicebox.map((item, index) => (
             <div
               key={index}
-              data-aos='fade-up'
-              data-aos-delay={`${index * 200}`}
-              data-aos-duration='1000'
-              data-aos-offset='300'
-              className='col-span-4 bg-white flex flex-col justify-between items-center text-center py-14 px-7 shadow-service rounded-md gap-8 dark:bg-darkmode'>
-              <Image
-                src={item.icon}
-                alt='Service Box'
-                width={0}
-                height={0}
-                className='w-10 h-10 bg-no-repeat inline-block bg-contain'
-              />
-              <h3 className='max-w-44 mx-auto text-2xl font-bold'>
+              className='group bg-ivory dark:bg-darkmode p-10 md:p-12 flex flex-col gap-6 transition-colors hover:bg-cream dark:hover:bg-darklight'>
+              <div className='w-12 h-12 rounded-2xl bg-coral/10 flex items-center justify-center'>
+                <Image
+                  src={item.icon}
+                  alt=''
+                  width={24}
+                  height={24}
+                  className='w-6 h-6'
+                />
+              </div>
+              <h3 className='font-display text-2xl md:text-3xl text-slate_ink dark:text-white leading-tight tracking-tight'>
                 {item.title}
               </h3>
-              <p className='dark:text-white/50 text-base font-normal'>
+              <p className='text-grey dark:text-white/60 leading-relaxed flex-1'>
                 {item.description}
               </p>
               <Link
                 href='#'
-                className='hover:text-blue-700 text-lg font-medium text-primary group flex items-center'>
-                Get Started
-                <span>
-                  <Icon
-                    icon='ei:chevron-right'
-                    width='30'
-                    height='30'
-                    className=''
-                  />
-                </span>
+                className='inline-flex items-center gap-2 text-coral font-medium text-sm group-hover:gap-3 transition-all'>
+                Learn more
+                <span className='transition-transform group-hover:translate-x-1'>→</span>
               </Link>
             </div>
           ))}

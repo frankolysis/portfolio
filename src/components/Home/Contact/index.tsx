@@ -4,148 +4,144 @@ import { getImgPath } from '@/utils/image'
 
 const Contactform = () => {
   return (
-    <section className='overflow-x-hidden bg-darkmode dark:bg-darklight'>
-      <div className='container mx-auto max-w-6xl px-4'>
-        <div className='grid md:grid-cols-12 grid-cols-1 md:gap-7 gap-0'>
-          <div
-            className='row-start-1 col-start-1 row-end-2 md:col-end-7 col-end-12'
-            data-aos='fade-left'
-            data-aos-delay='200'
-            data-aos-duration='1000'>
-            <div className='flex gap-2 items-center justify-start'>
-              <span className='w-3 h-3 rounded-full bg-success'></span>
-              <span className='font-medium text-sm text-white'>
-                build everything
+    <section className='bg-ivory dark:bg-darkmode py-24 md:py-32' id='contact'>
+      <div className='container mx-auto max-w-6xl px-6'>
+        <div className='grid md:grid-cols-12 grid-cols-1 gap-12 md:gap-16'>
+          <div className='md:col-span-5 space-y-10'>
+            <div>
+              <span className='text-xs uppercase tracking-widest text-coral font-medium'>
+                Get in touch
               </span>
+              <h2 className='font-display text-4xl md:text-5xl leading-[1.05] tracking-tight text-slate_ink dark:text-white mt-4'>
+                Tell me about
+                <br />
+                <span className='italic text-coral'>your project.</span>
+              </h2>
             </div>
-            <h2 className='sm:text-4xl text-[28px] leading-tight font-bold text-white py-12'>
-              Let’s discuss about your project and take it the next level.
-            </h2>
-            <div className='grid grid-cols-6 pb-12 border-b border-dark_border '>
-              <div className='col-span-3'>
-                <span className='text-white/50 text-lg'>Phone</span>
-                <p className='bg-transparent border-0 text-white text-lg'>
+
+            <div className='space-y-6'>
+              <div>
+                <p className='text-xs uppercase tracking-widest text-grey dark:text-white/40 mb-2'>
+                  Email
+                </p>
+                <a
+                  href='mailto:hello@knarfconsults.com'
+                  className='text-lg text-slate_ink dark:text-white hover:text-coral transition-colors'>
+                  hello@knarfconsults.com
+                </a>
+              </div>
+              <div>
+                <p className='text-xs uppercase tracking-widest text-grey dark:text-white/40 mb-2'>
+                  Phone
+                </p>
+                <a
+                  href='tel:+3232558964'
+                  className='text-lg text-slate_ink dark:text-white hover:text-coral transition-colors'>
                   +323-25-8964
-                </p>
+                </a>
               </div>
-              <div className='col-span-3'>
-                <span className='text-white/50 text-lg'>Email</span>
-                <p className='bg-transparent border-0 text-white text-lg'>
-                  me@landingpro.com
+              <div>
+                <p className='text-xs uppercase tracking-widest text-grey dark:text-white/40 mb-2'>
+                  Based in
                 </p>
-              </div>
-              <div className='col-span-6 pt-8'>
-                <span className='text-white/50 text-lg'>Location</span>
-                <p className='bg-transparent border-0 text-white text-lg'>
-                  Mark Avenue, Dalls Road, New York
+                <p className='text-lg text-slate_ink dark:text-white'>
+                  New York · working worldwide
                 </p>
               </div>
             </div>
-            <div className='pt-12'>
-              <p className='text-white/50 pb-4 text-base'>Trusted by</p>
-              <div className='flex items-center flex-wrap md:gap-14 gap-7'>
+
+            <div className='pt-8 border-t border-border dark:border-dark_border'>
+              <p className='text-xs uppercase tracking-widest text-grey dark:text-white/40 mb-5'>
+                Trusted by
+              </p>
+              <div className='flex items-center flex-wrap gap-8 opacity-60 dark:invert'>
                 <Image
                   src={getImgPath('/images/contact/google-pay.png')}
-                  alt='Google-pay'
+                  alt='Google Pay'
                   width={100}
                   height={20}
                   style={{ width: 'auto', height: 'auto' }}
                   quality={100}
-                  className='w_f max-w-28 w-full h-5'
+                  className='max-w-28 h-5'
                 />
                 <Image
                   src={getImgPath('/images/contact/play-juction.png')}
-                  alt='play-juction'
+                  alt='Play Junction'
                   width={100}
                   height={20}
                   style={{ width: 'auto', height: 'auto' }}
                   quality={100}
-                  className='w_f max-w-24 w-full h-6'
+                  className='max-w-24 h-6'
                 />
                 <Image
                   src={getImgPath('/images/contact/stripe.png')}
-                  alt='stripe'
+                  alt='Stripe'
                   width={100}
                   height={20}
                   style={{ width: 'auto', height: 'auto' }}
                   quality={100}
-                  className='w_f max-w-14 w-full h-6'
+                  className='max-w-14 h-6'
                 />
                 <Image
                   src={getImgPath('/images/contact/wise.png')}
-                  alt='wise'
+                  alt='Wise'
                   width={100}
                   height={20}
                   style={{ width: 'auto', height: 'auto' }}
                   quality={100}
-                  className='w_f max-w-16 w-full h-4'
+                  className='max-w-16 h-4'
                 />
               </div>
             </div>
           </div>
-          <div
-            data-aos='fade-right'
-            data-aos-delay='200'
-            data-aos-duration='1000'
-            className="relative before:content-[''] before:absolute before:bg-[url('/images/contact/form-line.png')] before:bg-no-repeat before:w-[13rem] before:h-24 before:top-5% before:bg-contain before:left-[35%] before:z-1 before:translate-x-full lg:before:inline-block before:hidden after:content-[''] after:absolute after:bg-[url('/images/contact/from-round-line.png')] after:bg-no-repeat after:w-[6.3125rem] after:h-[6.3125rem] after:bg-contain after:top-1/2 after:-left-[25%] after:z-1 after:translate-x-1/2 after:translate-y-1/2 md:after:inline-block after:hidden md:row-start-1 row-start-2 md:col-start-8 col-start-1 row-end-2 col-end-13">
-            <div className='lg:mt-0 mt-8  bg-white dark:bg-darkmode max-w-[50rem] m-auto pt-[2.1875rem] pb-8 px-[2.375rem] rounded-md relative z-10'>
-              <h2 className='sm:text-3xl text-lg font-bold text-midnight_text mb-3 dark:text-white'>
-                Start the project
-              </h2>
-              <form className='flex w-full m-auto justify-between flex-wrap gap-4'>
-                <div className='flex gap-4'>
+
+          <div className='md:col-span-7 md:col-start-7'>
+            <div className='bg-cream dark:bg-darklight border border-border dark:border-dark_border rounded-3xl p-8 md:p-12'>
+              <form className='space-y-5'>
+                <div className='grid grid-cols-2 gap-4'>
                   <input
-                    className='text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-border border-solid focus:border-primary dark:focus:border-primary placeholder:text-grey rounded-lg focus-visible:outline-0'
                     type='text'
                     placeholder='First name'
+                    className='w-full text-slate_ink dark:text-white text-base bg-ivory dark:bg-darkmode border border-border dark:border-dark_border rounded-xl px-4 py-3.5 focus:border-coral focus:outline-none placeholder:text-grey/70 transition-colors'
                   />
                   <input
                     type='text'
-                    className='text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-border border-solid focus:border-primary dark:focus:border-primary placeholder:text-grey rounded-lg focus-visible:outline-0'
                     placeholder='Last name'
+                    className='w-full text-slate_ink dark:text-white text-base bg-ivory dark:bg-darkmode border border-border dark:border-dark_border rounded-xl px-4 py-3.5 focus:border-coral focus:outline-none placeholder:text-grey/70 transition-colors'
                   />
                 </div>
-                <div className='w-full'>
+                <input
+                  type='email'
+                  placeholder='you@company.com'
+                  className='w-full text-slate_ink dark:text-white text-base bg-ivory dark:bg-darkmode border border-border dark:border-dark_border rounded-xl px-4 py-3.5 focus:border-coral focus:outline-none placeholder:text-grey/70 transition-colors'
+                />
+                <input
+                  type='text'
+                  placeholder='Country'
+                  className='w-full text-slate_ink dark:text-white text-base bg-ivory dark:bg-darkmode border border-border dark:border-dark_border rounded-xl px-4 py-3.5 focus:border-coral focus:outline-none placeholder:text-grey/70 transition-colors'
+                />
+                <textarea
+                  placeholder='Tell me a bit about what you have in mind…'
+                  className='w-full h-40 text-slate_ink dark:text-white text-base bg-ivory dark:bg-darkmode border border-border dark:border-dark_border rounded-xl px-4 py-3.5 focus:border-coral focus:outline-none placeholder:text-grey/70 transition-colors resize-none'
+                />
+                <label className='flex items-start gap-3 text-sm text-grey dark:text-white/60'>
                   <input
-                    type='email'
-                    className='text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-border border-solid focus:border-primary dark:focus:border-primary placeholder:text-grey rounded-lg focus-visible:outline-0'
-                    placeholder='youremail@website.com'
-                  />
-                </div>
-                <div className='w-full'>
-                  <input
-                    className='text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-border border-solid focus:border-primary dark:focus:border-primary placeholder:text-grey rounded-lg focus-visible:outline-0'
-                    type='text'
-                    placeholder='Country'
-                  />
-                </div>
-                <div className='w-full'>
-                  <textarea
-                    className='text-midnight_text h-[9.375rem] w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border! border-border border-solid! focus:border-primary dark:focus:border-primary placeholder:text-grey rounded-lg focus-visible:outline-0'
-                    placeholder='Let us know about your project'></textarea>
-                </div>
-                <div className='flex'>
-                  <input
-                    id='wp-comment-cookies-consent'
-                    name='wp-comment-cookies-consent'
                     type='checkbox'
-                    value='yes'
-                    className="hover:opacity-1 checked:bg-primary checked:opacity-1 relative border-2 border-solid border-primary rounded-xs bg-none cursor-pointer leading-none mr-2 outline-0 p-0! align-text-top h-[1.25rem] sm:w-[1.25rem] w-[2.25rem] opacity-[0.5] before:content-[''] before:absolute before:right-1/2 before:top-1/2 before:w-1 before:h-2 before:z-2 before:-mt-[0.0625rem] before:-ml-[0.0625rem] before:-mr-[0.0625rem] before:transform before:rotate-45 before:translate-x-[-50%] before:translate-y-[-50%] dark:focus:border-primary"
+                    className='mt-1 w-4 h-4 accent-coral cursor-pointer'
                   />
-                  <div className='text-grey dark:text-white/50'>
-                    I have read and acknowledge the{' '}
-                    <p className='text-primary inline cursor-pointer'>
-                      Terms and Conditions{' '}
-                    </p>
-                  </div>
-                </div>
-                <div className='w-full'>
-                  <button
-                    className='w-full bg-primary hover:bg-blue-700 text-white py-3 rounded-lg'
-                    type='submit'>
-                    Submit Inquiry
-                  </button>
-                </div>
+                  <span>
+                    I've read and agree to the{' '}
+                    <a href='#' className='text-coral hover:underline'>
+                      terms
+                    </a>
+                    .
+                  </span>
+                </label>
+                <button
+                  type='submit'
+                  className='w-full bg-slate_ink text-ivory dark:bg-ivory dark:text-slate_ink font-medium py-4 rounded-full hover:bg-coral hover:text-white dark:hover:bg-coral dark:hover:text-white transition-colors'>
+                  Send inquiry →
+                </button>
               </form>
             </div>
           </div>

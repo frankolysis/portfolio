@@ -6,20 +6,11 @@ const BlogList: React.FC = () => {
   const posts = getAllPosts(['title', 'date', 'excerpt', 'coverImage', 'slug'])
 
   return (
-    <section
-      className='flex flex-wrap justify-center pt-8 md:pb-24 pb-16 dark:bg-darkmode'
-      id='blog'>
-      <div className='container mx-auto  max-w-6xl'>
-        <div className='grid grid-cols-12 gap-7'>
+    <section className='bg-ivory dark:bg-darkmode py-20 md:py-28' id='blog'>
+      <div className='container mx-auto max-w-6xl px-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10'>
           {posts.map((blog, i) => (
-            <div
-              key={i}
-              className='w-full lg:col-span-4 md:col-span-6 col-span-12'
-              data-aos='fade-up'
-              data-aos-delay='200'
-              data-aos-duration='1000'>
-              <BlogCard blog={blog} />
-            </div>
+            <BlogCard key={i} blog={blog} />
           ))}
         </div>
       </div>

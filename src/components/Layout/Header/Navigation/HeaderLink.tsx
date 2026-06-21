@@ -23,7 +23,7 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <Link href={item.href} className={`text-base flex py-2 font-normal hover:text-primary dark:hover:text-primary text-black dark:text-white  ${path === item.href ? 'text-primary dark:text-primary!' : '  '} ${path.startsWith("/blog") && item.href==="/blog"?"text-primary! dark:text-primary!":null} ${path.startsWith("/portfolio") && item.href==="/portfolio"?"text-primary! dark:text-primary!":null}`}>
+      <Link href={item.href} className={`text-sm flex items-center gap-1 py-2 font-medium transition-colors text-slate_ink/80 dark:text-white/80 hover:text-coral dark:hover:text-coral ${path === item.href ? 'text-coral! dark:text-coral!' : ''} ${path.startsWith("/blog") && item.href==="/blog"?"text-coral! dark:text-coral!":""} ${path.startsWith("/portfolio") && item.href==="/portfolio"?"text-coral! dark:text-coral!":""}`}>
         {item.label}
         {item.submenu && (
           <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
@@ -33,7 +33,7 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
       </Link>
       {submenuOpen && (
         <div
-          className={`absolute py-2 left-0 mt-0.5 top-8 w-60 bg-white dark:bg-darklight shadow-lg dark:shadow-dark-md rounded-lg `}
+          className={`absolute py-2 left-0 mt-0.5 top-8 w-60 bg-ivory dark:bg-darklight border border-border dark:border-dark_border rounded-2xl shadow-sm`}
           data-aos="fade-up"
           data-aos-duration="400"
         >
@@ -41,10 +41,10 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
             <Link
               key={index}
               href={subItem.href}
-              className={`block px-4 py-2 text-[15px]  ${
+              className={`block mx-2 px-3 py-2 rounded-lg text-sm ${
                 path === subItem.href
-                  ? "bg-primary text-white"
-                  : "text-black hover:bg-gray-200 dark:hover:bg-midnight_text dark:text-white hover:text-dark dark:hover:text-white"
+                  ? "bg-coral text-white"
+                  : "text-slate_ink/80 hover:bg-cream dark:hover:bg-darkmode dark:text-white/80"
               }`}
             >
               {subItem.label}

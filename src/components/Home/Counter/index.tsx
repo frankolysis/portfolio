@@ -5,31 +5,27 @@ import Image from 'next/image'
 const Counter = ({ isColorMode }: { isColorMode: Boolean }) => {
   return (
     <section
-      className={` ${
-        isColorMode
-          ? 'dark:bg-darklight bg-section'
-          : 'dark:bg-darkmode bg-white'
+      className={`${
+        isColorMode ? 'dark:bg-darklight bg-cream' : 'dark:bg-darkmode bg-ivory'
       }`}>
-      <div className='container mx-auto max-w-6xl px-4'>
-        <div className='flex flex-wrap items-center md:justify-between justify-center md:gap-0 gap-9'>
+      <div className='container mx-auto max-w-6xl px-6'>
+        <div className='grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 py-4'>
           {count.map((item, index) => (
             <div
               key={index}
-              className='flex flex-col items-center gap-[0.875rem]'
-              data-aos='fade-up'
-              data-aos-delay={`${index * 200}`}
-              data-aos-duration='1000'>
+              className='flex flex-col items-start gap-3 p-6 md:p-8 border-l border-border dark:border-dark_border'>
               <Image
                 src={item.icon}
-                alt='icon'
-                width={30}
-                height={30}
+                alt=''
+                width={28}
+                height={28}
                 unoptimized
+                className='opacity-70'
               />
-              <span className='text-5xl font-semibold text-midnight_text dark:text-white'>
+              <span className='font-display text-5xl md:text-6xl font-normal text-slate_ink dark:text-white tracking-tight'>
                 {item.value}
               </span>
-              <p className='text-base text-grey text-center max-w-[17.8125rem] w-full dark:text-white/50'>
+              <p className='text-sm text-grey dark:text-white/60 leading-relaxed max-w-[14rem]'>
                 {item.description}
               </p>
             </div>

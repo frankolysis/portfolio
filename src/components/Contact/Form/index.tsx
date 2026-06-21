@@ -1,123 +1,100 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
-import { getImgPath } from '@/utils/image'
 
 const ContactForm = () => {
   return (
-    <>
-      <section className='dark:bg-darkmode md:pb-24 pb-16'>
-        <div className='container mx-auto max-w-6xl px-4'>
-          <div className='grid md:grid-cols-12 grid-cols-1 gap-8'>
-            <div className='col-span-6'>
-              <h2 className='max-w-72 text-[40px] leading-tight font-bold mb-9 text-midnight_text dark:text-white'>
-                Get Online Consultation
-              </h2>
-              <form className='flex flex-wrap w-full m-auto justify-between'>
-                <div className='sm:flex gap-3 w-full'>
-                  <div className='mx-0 my-2.5 flex-1'>
-                    <label
-                      htmlFor='first-name'
-                      className='pb-3 inline-block text-base'>
-                      First Name*
-                    </label>
-                    <input
-                      className='w-full text-base px-4 rounded-lg py-2.5 border-border dark:border-dark_border border-solid dark:text-white  dark:bg-darkmode border transition-all duration-500 focus:border-primary dark:focus:border-primary focus:border-solid focus:outline-0'
-                      type='text'
-                    />
-                  </div>
-                  <div className='mx-0 my-2.5 flex-1'>
-                    <label
-                      htmlFor='last-name'
-                      className='pb-3 inline-block text-base'>
-                      Last Name*
-                    </label>
-                    <input
-                      className='w-full text-base px-4 py-2.5 rounded-lg border-border dark:border-dark_border border-solid dark:text-white  dark:bg-darkmode border transition-all duration-500 focus:border-primary dark:focus:border-primary focus:border-solid focus:outline-0'
-                      type='text'
-                    />
-                  </div>
+    <section className='bg-cream dark:bg-darklight py-20 md:py-28'>
+      <div className='container mx-auto max-w-6xl px-6'>
+        <div className='grid md:grid-cols-12 gap-12 md:gap-16 items-start'>
+          <div className='md:col-span-5 sticky top-32'>
+            <span className='text-xs uppercase tracking-widest text-coral font-medium'>
+              Inquiry form
+            </span>
+            <h2 className='font-display text-4xl md:text-5xl leading-[1.05] tracking-tight text-slate_ink dark:text-white mt-4'>
+              Tell me what you're
+              <br />
+              <span className='italic text-coral'>thinking about.</span>
+            </h2>
+            <p className='text-grey dark:text-white/60 leading-relaxed mt-6 max-w-md'>
+              The more detail you can share, the better. Half-formed ideas are
+              fine too.
+            </p>
+          </div>
+          <div className='md:col-span-7'>
+            <form className='space-y-5'>
+              <div className='grid grid-cols-2 gap-4'>
+                <div>
+                  <label className='block text-xs uppercase tracking-widest text-grey dark:text-white/40 mb-2'>
+                    First name
+                  </label>
+                  <input
+                    type='text'
+                    className='w-full text-slate_ink dark:text-white text-base bg-ivory dark:bg-darkmode border border-border dark:border-dark_border rounded-xl px-4 py-3.5 focus:border-coral focus:outline-none transition-colors'
+                  />
                 </div>
-                <div className='sm:flex gap-3 w-full'>
-                  <div className='mx-0 my-2.5 flex-1'>
-                    <label
-                      htmlFor='email'
-                      className='pb-3 inline-block text-base'>
-                      Email address*
-                    </label>
-                    <input
-                      type='email'
-                      className='w-full text-base px-4 py-2.5 rounded-lg border-border dark:border-dark_border border-solid dark:text-white  dark:bg-darkmode border transition-all duration-500 focus:border-primary dark:focus:border-primary focus:border-solid focus:outline-0'
-                    />
-                  </div>
-                  <div className='mx-0 my-2.5 flex-1'>
-                    <label
-                      htmlFor='Specialist'
-                      className='pb-3 inline-block text-base'>
-                      Specialist*
-                    </label>
-                    <select className='w-full text-base px-4 py-2.5 rounded-lg border-border dark:text-white border-solid dark:bg-darkmode border transition-all duration-500 focus:border-primary dark:focus:border-primary dark:border-dark_border focus:border-solid focus:outline-0'>
-                      <option value=''>Choose a specialist</option>
-                      <option value='Baking &amp; Pastry'>
-                        Choose a specialist
-                      </option>
-                      <option value='Exotic Cuisine'>Exotic Cuisine</option>
-                      <option value='French Desserts'>French Desserts</option>
-                      <option value='Seafood &amp; Wine'>
-                        Choose a specialist
-                      </option>
-                    </select>
-                  </div>
+                <div>
+                  <label className='block text-xs uppercase tracking-widest text-grey dark:text-white/40 mb-2'>
+                    Last name
+                  </label>
+                  <input
+                    type='text'
+                    className='w-full text-slate_ink dark:text-white text-base bg-ivory dark:bg-darkmode border border-border dark:border-dark_border rounded-xl px-4 py-3.5 focus:border-coral focus:outline-none transition-colors'
+                  />
                 </div>
-                <div className='sm:flex gap-3 w-full'>
-                  <div className='mx-0 my-2.5 flex-1'>
-                    <label
-                      htmlFor='date'
-                      className='pb-3 inline-block text-base'>
-                      Date*
-                    </label>
-                    <input
-                      className='w-full text-base px-4 rounded-lg  py-2.5 outline-hidden dark:text-white dark:bg-darkmode border-border border-solid border transition-all duration-500 focus:border-primary dark:focus:border-primary dark:border-dark_border focus:border-solid focus:outline-0'
-                      type='date'
-                    />
-                  </div>
-                  <div className='mx-0 my-2.5 flex-1'>
-                    <label
-                      htmlFor='time'
-                      className='pb-3 inline-block text-base'>
-                      Time*
-                    </label>
-                    <input
-                      className='w-full text-base px-4 rounded-lg py-2.5 border-border outline-hidden dark:text-white dark:bg-darkmode border-solid border transition-all duration-500 focus:border-primary dark:focus:border-primary dark:border-dark_border focus:border-solid focus:outline-0'
-                      type='time'
-                    />
-                  </div>
+              </div>
+              <div>
+                <label className='block text-xs uppercase tracking-widest text-grey dark:text-white/40 mb-2'>
+                  Email
+                </label>
+                <input
+                  type='email'
+                  className='w-full text-slate_ink dark:text-white text-base bg-ivory dark:bg-darkmode border border-border dark:border-dark_border rounded-xl px-4 py-3.5 focus:border-coral focus:outline-none transition-colors'
+                />
+              </div>
+              <div className='grid grid-cols-2 gap-4'>
+                <div>
+                  <label className='block text-xs uppercase tracking-widest text-grey dark:text-white/40 mb-2'>
+                    Type of work
+                  </label>
+                  <select className='w-full text-slate_ink dark:text-white text-base bg-ivory dark:bg-darkmode border border-border dark:border-dark_border rounded-xl px-4 py-3.5 focus:border-coral focus:outline-none transition-colors'>
+                    <option>Product engineering</option>
+                    <option>Brand & site</option>
+                    <option>Fractional CTO</option>
+                    <option>Other</option>
+                  </select>
                 </div>
-                <div className='mx-0 my-2.5 w-full'>
-                  <Link
-                    href='#'
-                    className='bg-primary rounded-lg text-white py-4 px-8 mt-4 inline-block hover:bg-blue-700'
-                    type='submit'>
-                    Make an appointment
-                  </Link>
+                <div>
+                  <label className='block text-xs uppercase tracking-widest text-grey dark:text-white/40 mb-2'>
+                    Budget
+                  </label>
+                  <select className='w-full text-slate_ink dark:text-white text-base bg-ivory dark:bg-darkmode border border-border dark:border-dark_border rounded-xl px-4 py-3.5 focus:border-coral focus:outline-none transition-colors'>
+                    <option>Under $10k</option>
+                    <option>$10k — $25k</option>
+                    <option>$25k — $50k</option>
+                    <option>$50k+</option>
+                  </select>
                 </div>
-              </form>
-            </div>
-            <div className='col-span-6'>
-              <Image
-                src={getImgPath('/images/contact-page/contact.jpg')}
-                alt='Contact'
-                width={1300}
-                height={0}
-                quality={100}
-                style={{ width: '100%', height: 'auto' }}
-                className='bg-no-repeat bg-contain'
-              />
-            </div>
+              </div>
+              <div>
+                <label className='block text-xs uppercase tracking-widest text-grey dark:text-white/40 mb-2'>
+                  About the project
+                </label>
+                <textarea
+                  rows={6}
+                  placeholder="What are you building, and what's tripping you up?"
+                  className='w-full text-slate_ink dark:text-white text-base bg-ivory dark:bg-darkmode border border-border dark:border-dark_border rounded-xl px-4 py-3.5 focus:border-coral focus:outline-none transition-colors resize-none placeholder:text-grey/60'
+                />
+              </div>
+              <Link
+                href='#'
+                className='inline-flex items-center gap-2 bg-slate_ink text-ivory dark:bg-ivory dark:text-slate_ink font-medium px-8 py-4 rounded-full hover:bg-coral hover:text-white dark:hover:bg-coral dark:hover:text-white transition-colors mt-2'>
+                Send inquiry →
+              </Link>
+            </form>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }
 
